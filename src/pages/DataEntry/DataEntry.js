@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 export default function DataEntry(){
     const navigate = useNavigate()
-    const [budget, setBudget] = useState(1000)
+    const [budget, setBudget] = useState(140.69)
     const [cfClicks, setcfcClicks] = useState(0);
     const [ctcClicks, setctcClicks] = useState(0);
     const [hncClicks, sethncClickes] = useState(0);
