@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 export default function DataEntry(){
     const navigate = useNavigate()
-    const [budget, setBudget] = useState(140.69)
+    const [budget, setBudget] = useState(100.69)
     const [cfClicks, setcfcClicks] = useState(0);
     const [ctcClicks, setctcClicks] = useState(0);
     const [hncClicks, sethncClickes] = useState(0);
@@ -25,7 +25,7 @@ export default function DataEntry(){
     }
     return (
         <div>
-        <button onClick={() => navigate('/recommendation', {state: {cfClicks, ctcClicks, hncClicks}})}>
+        <button onClick={() => navigate('/recommendation', {state: {cfClicks, ctcClicks, hncClicks, budget}})}>
         Click to go to Recommendation
         </button>
         <p> Welcome to our Cereal Budget App!</p>
@@ -40,12 +40,12 @@ export default function DataEntry(){
         <button onClick={() => run(setctcClicks, 4, ctcClicks)}>
         Buy Cinnamon Toast Crunch for $4
         </button>
-        <p>You bought ${ctcClicks} Boxes of Cinnamon Toast Crunch!</p>
+        <p>You bought {ctcClicks} Boxes of Cinnamon Toast Crunch!</p>
 
         <button onClick={() => run(sethncClickes, 2, hncClicks)}>
         Buy Honey Nut Cheerios for $2
         </button>
-        <p>You bought ${hncClicks} Boxes of Honey Nut Cheerios</p>
+        <p>You bought {hncClicks} Boxes of Honey Nut Cheerios</p>
 
         </div>
 
