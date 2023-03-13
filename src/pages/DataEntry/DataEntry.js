@@ -4,25 +4,23 @@ import React, { useState } from "react";
 
 export default function DataEntry(){
     const navigate = useNavigate()
-    const totalBudget = 1000;
-    const [budget, setBudget] = useState(0)
+    const [budget, setBudget] = useState(1000)
     const [cfClicks, setcfcClicks] = useState(0);
     const [ctcClicks, setctcClicks] = useState(0);
     const [hncClicks, sethncClickes] = useState(0);
   
 
-    function countClicks(set, cereal) {
-        set(cereal);
+    function countClicks(set, clicks) {
+        set(clicks+1);
 
     }
 
     function budgetTracker(set, price){
-        set(totalBudget-price);
-        totalBudget = totalBudget - price;
+        set(budget-price);
     }
         
     function run(set, price, click){
-        countClicks(set, price);
+        countClicks(set, click);
         budgetTracker(setBudget, price);
     }
     return (
@@ -36,18 +34,18 @@ export default function DataEntry(){
         <button onClick={() => run(setcfcClicks, 3, cfClicks)}>
         Buy Corn Flakes for $3
         </button>
-        <p>You bought ${cfClicks} of Corn Flakes!</p>
+        <p>You bought {cfClicks} Boxes of Corn Flakes!</p>
 
 
         <button onClick={() => run(setctcClicks, 4, ctcClicks)}>
         Buy Cinnamon Toast Crunch for $4
         </button>
-        <p>You bought ${ctcClicks} of Cinnamon Toast Crunch!</p>
+        <p>You bought ${ctcClicks} Boxes of Cinnamon Toast Crunch!</p>
 
         <button onClick={() => run(sethncClickes, 2, hncClicks)}>
         Buy Honey Nut Cheerios for $2
         </button>
-        <p>You bought ${hncClicks} of Honey Nut Cheerios</p>
+        <p>You bought ${hncClicks} Boxes of Honey Nut Cheerios</p>
 
         </div>
 
